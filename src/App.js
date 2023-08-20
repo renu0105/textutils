@@ -47,11 +47,7 @@ function App() {
   };
 
   const toggle = () => {
-    if (mode === "light") {
-      document.body.style.background = "grey";
-    } else {
-      document.body.style.background = "orange";
-    }
+    enableMode();
   };
 
   return (
