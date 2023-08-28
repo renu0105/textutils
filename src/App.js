@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Navbar from "./components/Navbar";
 import Alert from "./components/Alert";
 import Textform from "./components/Textform";
-import About from "./components/About";
+// import About from "./components/About";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -69,7 +69,7 @@ function App() {
     <>
       <Navbar
         title="TextUtils"
-        about="About"
+        // about="About"
         toggleMode={toggle}
         navMode={mode}
         color={color}
@@ -87,7 +87,7 @@ function App() {
             />
           }
         />
-        <Route path="/about" element={<About navMode={mode} />} />
+        {/* <Route path="/about" element={<About navMode={mode} />} /> */}
       </Routes>
     </>
   );

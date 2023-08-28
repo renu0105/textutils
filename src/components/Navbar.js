@@ -27,15 +27,15 @@ export default function Navbar(props) {
             <li className="nav-item">
               <Link className="nav-link active" aria-current="page" to="/">
                 {" "}
-                Home{" "}
+                {/* Home{" "} */}
               </Link>
             </li>
 
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link className="nav-link" to="/about">
                 {props.about}
               </Link>
-            </li>
+            </li> */}
           </ul>
           {/*<form className="d-flex" role="search">
               <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
@@ -103,7 +103,7 @@ Navbar.propTypes = {
   about: PropTypes.string,
 };
 
-Navbar.defaultProps = {
-  title: "hello",
-  about: "hii",
-};
+// Navbar.defaultProps = {
+//   title: "hello",
+//   about: "hii",
+// };
