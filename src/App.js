@@ -25,10 +25,10 @@ function App() {
   const enableMode = () => {
     if (mode === "light") {
       setmode("dark");
-      removeBodyclasses();
       document.body.style.backgroundColor = "#9ea78e99 ";
       showAlert("Dark mode has been enabled", "success");
       document.title = "Textutils-Dark mode";
+      removeBodyclasses();
 
       //  setInterval(() => {
       //    document.title="Textutils is good website";
@@ -41,10 +41,10 @@ function App() {
       //  }, 2000);
     } else {
       setmode("light");
-      removeBodyclasses();
       document.body.style.backgroundColor = " #ebe7d7";
       document.title = "Textutils-Light mode";
       showAlert("Light mode has been enabled", "success");
+      removeBodyclasses();
     }
   };
 
@@ -53,7 +53,7 @@ function App() {
   };
 
   const removeBodyclasses = () => {
-    document.body.classList.remove("bg-light");
+    document.body.classList.remove("bg-primary");
     document.body.classList.remove("bg-warning");
     document.body.classList.remove("bg-danger");
     document.body.classList.remove("bg-success");
