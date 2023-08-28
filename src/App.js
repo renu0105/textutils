@@ -7,7 +7,7 @@ import About from "./components/About";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
-  const [mode, setmode] = useState("light");
+  const [mode, setmode] = useState("dark");
 
   const [alert, setAlert] = useState(null);
 
@@ -25,8 +25,8 @@ function App() {
   const enableMode = () => {
     if (mode === "light") {
       setmode("dark");
-      document.body.style.backgroundColor = "#262450";
-      showAlert("dark mode has been enalebed", "success");
+      document.body.style.backgroundColor = "#9ea78e99 ";
+      showAlert("Dark mode has been enabled", "success");
       document.title = "Textutils-Dark mode";
 
       //  setInterval(() => {
@@ -40,9 +40,9 @@ function App() {
       //  }, 2000);
     } else {
       setmode("light");
-      document.body.style.backgroundColor = "white";
+      document.body.style.backgroundColor = " #ebe7d7";
       document.title = "Textutils-Light mode";
-      showAlert("light mode has been enalebed", "success");
+      showAlert("Light mode has been enabled", "success");
     }
   };
 
@@ -50,22 +50,41 @@ function App() {
     enableMode();
   };
 
+  const removeBodyclasses = () => {
+    document.body.classList.remove("bg-light");
+    document.body.classList.remove("bg-warning");
+    document.body.classList.remove("bg-danger");
+    document.body.classList.remove("bg-success");
+  };
+
+  const color = (cls) => {
+    removeBodyclasses();
+    console.log(cls);
+    document.body.classList.add("bg-" + cls);
+  };
   return (
     <>
       <Navbar
-        title="Textutils"
+        title="TextUtils"
         about="About"
         toggleMode={toggle}
         navMode={mode}
+        color={color}
       />
       <Alert alert={alert} />
       <Routes>
         <Route
           exact
           path="/"
-          element={<Textform showAlert={showAlert} navMode={mode} />}
+          element={
+            <Textform
+              showAlert={showAlert}
+              heading=" TextUtils-Case converter, Copy text, Word counter, Character counter"
+              navMode={mode}
+            />
+          }
         />
-        <Route path="/about" element={<About />} />
+        <Route path="/about" element={<About navMode={mode} />} />
       </Routes>
     </>
   );

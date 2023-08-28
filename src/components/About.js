@@ -1,36 +1,48 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
+import React from "react";
+export default function About(props) {
+  // const [myStyle, setStyle] = useState({
+  //   color: "white",
+  //   backgroundColor: "black",
+  // });
 
-export default function About() {
-  const [myStyle, setStyle] = useState({
-    color: "white",
-    backgroundColor: "black",
-  });
+  // const [btntext, setbtntext] = useState("enable dark modeeee");
 
-  const [btntext, setbtntext] = useState("enable dark modeeee");
+  // const toogleBtn = () => {
+  //   if (myStyle.color === "white")
+  //     setStyle({
+  //       color: "black",
+  //       backgroundColor: "white",
+  //       border: "2px solid red",
+  //     });
 
-  const toogleBtn = () => {
-    if (myStyle.color === "white") {
-      setStyle({
-        color: "black",
-        backgroundColor: "white",
-        border: "2px solid red",
-      });
+  //     setbtntext("enale dark mode");
+  //   } else {
+  //     setStyle({
+  //       color: "white",
+  //       backgroundColor: "black",
+  //       border: "2px solid grey",
+  //     });
 
-      setbtntext("enale dark mode");
-    } else {
-      setStyle({
-        color: "white",
-        backgroundColor: "black",
-        border: "2px solid grey",
-      });
+  //     setbtntext("enale light mode");
+  //   }
+  // };
 
-      setbtntext("enale light mode");
-    }
+  let myStyle = {
+    color: props.navMode === "light" ? "black" : "white",
+    backgroundColor: props.navMode === "light" ? "purple" : "#d46d7f",
+    border: "2px solid",
+    borderColor: props.navMode === "light" ? "black" : "white",
   };
 
   return (
-    <div className="conatiner" style={myStyle}>
-      <h2>my reactjs app</h2>
+    <div
+      className="conatiner"
+      style={{ color: props.navMode === "light" ? "black" : "white" }}
+    >
+      <h2>
+        <strong>My Reactjs App</strong>
+      </h2>
 
       <div className="accordion" id="accordionExample">
         <div className="accordion-item my-2" style={myStyle}>
@@ -44,7 +56,7 @@ export default function About() {
               aria-controls="collapseOne"
               style={myStyle}
             >
-              Accordion Item #1
+              <strong> Accordion Item #1 </strong>
             </button>
           </h2>
           <div
@@ -53,7 +65,7 @@ export default function About() {
             aria-labelledby="headingOne"
             data-bs-parent="#accordionExample"
           >
-            <div className="accordion-body">
+            <div className="accordion-body" style={myStyle}>
               <strong>This is the first item's accordion body.</strong> It is
               shown by default, until the collapse plugin adds the appropriate
               classNamees that we use to style each element. These classNamees
@@ -117,7 +129,7 @@ export default function About() {
             aria-labelledby="headingThree"
             data-bs-parent="#accordionExample"
           >
-            <div className="accordion-body">
+            <div className="accordion-body" style={myStyle}>
               <strong>This is the third item's accordion body.</strong> It is
               hidden by default, until the collapse plugin adds the appropriate
               classNamees that we use to style each element. These classNamees
@@ -130,11 +142,11 @@ export default function About() {
           </div>
         </div>
       </div>
-      <div className="container my-3">
+      {/* <div className="container my-3">
         <button onClick={toogleBtn} type="button" className="btn btn-primary">
           {btntext}
         </button>
-      </div>
+      </div> */}
     </div>
   );
 }

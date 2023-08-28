@@ -27,7 +27,7 @@ export default function Navbar(props) {
             <li className="nav-item">
               <Link className="nav-link active" aria-current="page" to="/">
                 {" "}
-                HOME{" "}
+                Home{" "}
               </Link>
             </li>
 
@@ -41,6 +41,37 @@ export default function Navbar(props) {
               <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
               <button className="btn btn-outline-success" type="submit">Search</button>
     </form>  */}
+
+          <div className="flex">
+            <button
+              className="btn btn-primary mx-2"
+              onClick={() => {
+                props.color("primary");
+              }}
+              style={{ height: "20px", width: "30px" }}
+            ></button>
+            <button
+              className="btn btn-warning mx-2"
+              onClick={() => {
+                props.color("warning");
+              }}
+              style={{ height: "20px", width: "30px" }}
+            ></button>
+            <button
+              className="btn btn-danger mx-2"
+              onClick={() => {
+                props.color("danger");
+              }}
+              style={{ height: "20px", width: "30px" }}
+            ></button>
+            <button
+              className="btn btn-success mx-2"
+              onClick={() => {
+                props.color("success");
+              }}
+              style={{ height: "20px", width: "30px" }}
+            ></button>
+          </div>
 
           <div
             className={`form-check form-switch text-${
