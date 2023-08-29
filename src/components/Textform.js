@@ -53,6 +53,7 @@ export default function Textform(props) {
             id="box"
             rows="6"
             cols="200"
+            className="form-control"
             value={text}
             onChange={handleOnClick}
             style={{
@@ -64,36 +65,36 @@ export default function Textform(props) {
         </div>
         <button
           disabled={text.length === 0}
-          className="btn btn-light mx-2 "
+          className="btn btn-light m-2 "
           onClick={handleUpClick}
         >
           covert to uppercase{" "}
         </button>
         <button
           disabled={text.length === 0}
-          className="btn btn-primary mx-2 "
+          className="btn btn-primary m-2 "
           onClick={handleLoClick}
         >
           covert to lowercase{" "}
         </button>
         <button
           disabled={text.length === 0}
-          className="btn btn-secondary mx-2"
+          className="btn btn-secondary m-2"
           onClick={clear}
         >
           remove text
         </button>
         <button
           disabled={text.length === 0}
-          className="btn btn-success mx-2"
+          className="btn btn-success m-2"
           onClick={trimmm}
         >
           trim text
         </button>
-        <button className="btn btn-info mx-2" onClick={copy}>
+        <button className="btn btn-info m-2" onClick={copy}>
           copy text
         </button>
-        <button className="btn btn-dark mx-2" onClick={removeSpace}>
+        <button className="btn btn-dark m-2" onClick={removeSpace}>
           remove extra spaces
         </button>
       </div>
