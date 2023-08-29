@@ -12,7 +12,7 @@ export default function Navbar(props) {
           {props.title}
         </Link>
 
-        <div className="d-flex align-items-center justify-content-center">
+        <div className="d-flex align-items-center flex-wrap justify-content-center">
           <button
             className="btn btn-primary m-2"
             onClick={() => {
