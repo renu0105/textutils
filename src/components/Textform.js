@@ -113,13 +113,15 @@ export default function Textform(props) {
         </p>
         <p>
           {0.008 *
-            text.split(/\s+/).filter((element) => {
+            text.split(" ").filter((element) => {
               return element.length !== 0;
             }).length}{" "}
           min read
         </p>
         <h2>Preview</h2>
-        <p>{text.length > 0 ? text : "Enter Something To Preview It Here"}</p>
+        <p className="text-break" width="100px">
+          {text.length > 0 ? text : "Enter Something To Preview It Here"}
+        </p>
       </div>
     </>
   );
