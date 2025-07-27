@@ -7,7 +7,7 @@ import Textform from "./components/Textform";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
-  const [mode, setmode] = useState("dark");
+  const [mode, setmode] = useState("light"); // whether dark mode is enabled or not
 
   const [alert, setAlert] = useState(null);
 
@@ -23,27 +23,17 @@ function App() {
   };
 
   const enableMode = () => {
-    if (mode === "light") {
-      setmode("dark");
-      document.body.style.backgroundColor = "#9ea78e99 ";
-      showAlert("Dark mode has been enabled", "success");
-      document.title = "Textutils-Dark mode";
-      removeBodyclasses();
-
-      //  setInterval(() => {
-      //    document.title="Textutils is good website";
-
-      //   }, 1000);
-
-      // setInterval(() => {
-      //   document.title="Install Textutils now"
-
-      //  }, 2000);
-    } else {
+    if (mode === "dark") {
       setmode("light");
-      document.body.style.backgroundColor = " #ebe7d7";
-      document.title = "Textutils-Light mode";
+      document.body.style.backgroundColor = "white";
       showAlert("Light mode has been enabled", "success");
+      document.title = "Textutils-Light mode";
+      removeBodyclasses();
+    } else {
+      setmode("dark");
+      document.body.style.backgroundColor = "black";
+      document.title = "Textutils-Dark mode";
+      showAlert("Dark mode has been enabled", "success");
       removeBodyclasses();
     }
   };
@@ -82,12 +72,12 @@ function App() {
           element={
             <Textform
               showAlert={showAlert}
-              heading=" TextUtils-Case converter, Copy text, Word counter, Character counter"
+              heading=" Textutils - Text Manipulation "
               navMode={mode}
+              color={color}
             />
           }
         />
-        {/* <Route path="/about" element={<About navMode={mode} />} /> */}
       </Routes>
     </>
   );

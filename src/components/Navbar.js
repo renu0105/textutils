@@ -1,47 +1,31 @@
-import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 export default function Navbar(props) {
   return (
     <nav
-      className={`navbar navbar-expand-lg navbar-${props.navMode} bg-${props.navMode}`}
+      className={`navbar navbar-expand-lg`}
+      style={{
+        backgroundColor: props.navMode === "dark" ? "#343a40" : "#0a0a45",
+        color: props.navMode === "dark" ? "white" : "black",
+        width: "100%",
+        padding: "0 40px",
+        borderBottom: "1px solid #ccc",
+      }}
     >
       <div className=" d-flex container-fluid">
-        <Link className="navbar-brand" to="/">
+        <Link
+          className="navbar-brand"
+          to="/"
+          style={{
+            color: props.navMode === "dark" ? "orange" : "white",
+            fontWeight: "bold",
+          }}
+        >
           {props.title}
         </Link>
 
         <div className="d-flex align-items-center flex-wrap justify-content-center">
-          <button
-            className="btn btn-primary m-2"
-            onClick={() => {
-              props.color("primary");
-            }}
-            style={{ height: "20px", width: "30px" }}
-          ></button>
-          <button
-            className="btn btn-warning m-2"
-            onClick={() => {
-              props.color("warning");
-            }}
-            style={{ height: "20px", width: "30px" }}
-          ></button>
-          <button
-            className="btn btn-danger m-2"
-            onClick={() => {
-              props.color("danger");
-            }}
-            style={{ height: "20px", width: "30px" }}
-          ></button>
-          <button
-            className="btn btn-success m-2"
-            onClick={() => {
-              props.color("success");
-            }}
-            style={{ height: "20px", width: "30px" }}
-          ></button>
-
           <div
             className={`m-2 form-check form-switch text-${
               props.navMode === "light" ? "dark" : "light"
@@ -57,6 +41,9 @@ export default function Navbar(props) {
             <label
               className="form-check-label"
               htmlFor="flexSwitchCheckDefault"
+              style={{
+                color: props.navMode === "dark" ? "orange" : "white",
+              }}
             >
               Enable Dark Mode
             </label>
